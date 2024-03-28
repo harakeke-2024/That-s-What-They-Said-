@@ -7,7 +7,7 @@ export default function Homepage() {
         <div id="content_container">
           <div id="content">
             <h3>Dev Academy</h3>
-            <h1>Trivia Night</h1>
+            <h1 id="title">Trivia Night</h1>
             <h4>Powered by Deez Nuts</h4>
             <ul>
               <li>
