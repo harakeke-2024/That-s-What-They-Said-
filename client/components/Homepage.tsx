@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Nav from './Nav'
 
 export default function Homepage() {
   return (
@@ -11,11 +12,7 @@ export default function Homepage() {
             <h4>Powered by Deez Nuts</h4>
             <ul>
               <li>
-                <button className="button_1">
-                  <Link className="white_link" to={`/Questions`}>
-                    Sign in
-                  </Link>
-                </button>
+                <Nav />
               </li>
               <li>
                 <button className="button_2">Play as Guest</button>

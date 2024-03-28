@@ -32,6 +32,7 @@
     "superagent": "^8.1.2"
   },
   "devDependencies": {
+    "@auth0/auth0-react": "^2.2.4",
     "@devacademy/eslint-config": "^1.9.1",
     "@tanstack/eslint-plugin-query": "^5.12.2",
     "@tanstack/react-query": "^5.12.2",
