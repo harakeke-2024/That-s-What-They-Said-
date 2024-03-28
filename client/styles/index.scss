@@ -1,6 +1,189 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+@font-face {
+  font-family: 'Horizon';
+  src: url('../../Public/fonts/horizon.otf') format('opentype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-html, 
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
-  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(circle at 50% 50%, #9D58F5, #8158F5, #8158F5);
+}
+
+// Home Page CSS
+.container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+
+}
+#content_container{
+  width:95%;
+  height:90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:url('../../Public/Images/Homepage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#content{
+height: 70%;
+width:85%;
+text-align: center;
+
+
+}
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  margin-top: 15px;
+  font-size: 120px;
+  font-family: 'Horizon', sans-serif;
+  color:#211947;
+}
+
+h3 {
+  margin-top: 5px;
+  font-size:37px;
+  font-family: "Montserrat", sans-serif;
+  font-weight:400;
+  color:#fcb900;
+}
+h4 {
+  font-size:30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight:400;
+  color:#211947;
+}
+
+.button_1 {
+  width: 350px; /* Adjust width as needed */
+  height: 105px; /* Adjust height as needed */
+  background-image: linear-gradient(125deg, #7BB065, #6DC96F);
+  border-radius: 52.5px; /* Half of the height to make it pill-shaped */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  justify-content: center;
+  line-height: normal;
+  padding: 35px 24px;
+  text-align: center;
+  margin-top: 75px;
+  transition: all 0.3s ease;
+}
+
+.button_1:hover{
+  transform: scale(1.1);
+}
+.button_1:active{
+  transform: scale(1.0);
+}
+
+.button_2 {
+  width: 350px; /* Adjust width as needed */
+  height: 105px; /* Adjust height as needed */
+  background-image: linear-gradient(125deg, #7BB065, #6DC96F);
+  border-radius: 52.5px; /* Half of the height to make it pill-shaped */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  justify-content: center;
+  line-height: normal;
+  padding: 35px 24px;
+  text-align: center;
+  margin-top:30px;
+  transition: all 0.3s ease;
+}
+
+.button_2:hover{
+  transform: scale(1.1);
+}
+.button_2:active{
+  transform: scale(1.0);
+}
+.white_link {
+  color: white;
+  text-decoration: none;
+}
+
+// Questions Page CSS
+.questions-container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.questions-content-container {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90vh;
+  width: 90vw;
+
+
+}
+.Question-Box{
+  border-style:solid;
+  width: 100%;
+  height: 45%;
+  border-radius: 25px;
+  border-color: #ED8293;
+  border-width: 13px;
+  background-color: white;
+  text-align: center;
+}
+.Answer-button{
+  border-style:solid;
+  width: 45%;
+  height: 20%;
+  background-color: #F1E9EA;
+  border-radius: 25px;
+  border-color: #ED8293;
+  border-width: 13px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+#Answer-1:hover{
+  transform: scale(1.1);
+}
+#Answer-2:hover{
+  transform: scale(1.1);
+}
+#Answer-3:hover{
+  transform: scale(1.1);
+}
+#Answer-4:hover{
+  transform: scale(1.1);
+}
+
+#Answer-1:active{
+  transform: scale(1.0);
+}
+#Answer-2:active{
+  transform: scale(1.0);
+}
+#Answer-3:active{
+  transform: scale(1.0);
+}
+#Answer-4:active{
+  transform: scale(1.0);
 }
