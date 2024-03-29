@@ -36,29 +36,29 @@ body {
 #content{
 height: 80vh;
 width:85vw;
+
 text-align: center;
-border-style:solid
 
 }
 ul {
   list-style-type: none;
 }
 
-#title {
-  margin-top: 15px;
+.title {
+  margin-top: 25px;
   font-size: 100px;
   font-family: 'Horizon', sans-serif;
   color:#211947;
 }
 
-h3 {
-  margin-top: 5px;
+.Dev {
+  margin-top: 60px;
   font-size:37px;
   font-family: "Montserrat", sans-serif;
-  font-weight:400;
+  font-weight:500;
   color:#fcb900;
 }
-h4 {
+.By {
   font-size:30px;
   font-family: "Montserrat", sans-serif;
   font-weight:400;
@@ -79,9 +79,9 @@ h4 {
   font-weight: 700;
   justify-content: center;
   line-height: normal;
-  padding: 32px 24px;
+  padding: 42px 24px;
   text-align: center;
-  margin-top: 75px;
+  margin-top: 180px;
   transition: all 0.3s ease;
 }
 
@@ -92,29 +92,8 @@ h4 {
   transform: scale(1.0);
 }
 
-.button_2 {
-  width: 16vw; /* Adjust width as needed */
-  height: 12vh; /* Adjust height as needed */
-  background-image: linear-gradient(125deg, #7BB065, #6DC96F);
-  border-radius: 52.5px; /* Half of the height to make it pill-shaped */
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 23px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  justify-content: center;
-  line-height: normal;
-  padding: 32px 24px;
-  text-align: center;
-  margin-top:30px;
-  transition: all 0.3s ease;
-}
 
-.button_2:hover{
-  transform: scale(1.1);
-}
+
 .button_2:active{
   transform: scale(1.0);
 }
@@ -151,6 +130,28 @@ h4 {
   background-color: white;
   text-align: center;
 }
+#Question {
+  margin-top: 25px;
+  font-size: 50px;
+  font-family: 'Horizon', sans-serif;
+  color:#211947;
+}
+#Question-Item{
+  margin-top: 60px;
+  font-size:37px;
+  font-family: "Montserrat", sans-serif;
+  font-weight:500;
+  color:#fcb900;
+  max-width: 300px auto;
+  max-height: 250px;
+  justify-content: center;
+}
+#Question-Item img{
+  margin-top: -55px;
+  width: 270px;
+  
+;
+}
 .Answer-button{
   border-style:solid;
   width: 45%;
@@ -159,7 +160,12 @@ h4 {
   border-radius: 25px;
   border-color: #ED8293;
   border-width: 13px;
+  font-size:30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight:600;
+  color:#211947;
   text-align: center;
+
   transition: all 0.3s ease;
 }
 #Answer-1:hover{

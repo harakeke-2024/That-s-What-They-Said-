@@ -98,11 +98,13 @@ export default function Questions(Props: { name: string }) {
         <div className="questions-container">
           <div className="questions-content-container">
             <div className="Question-Box">
-              <h1>{data[questionNum].question}</h1>
-              {
-                questionOut(data)
-                /* {<h3>{data[questionNum][answer]}</h3>} */
-              }
+              <h1 id="Question">{data[questionNum].question}</h1>
+              <div id="Question-Item">
+                {
+                  questionOut(data)
+                  /* {<h3>{data[questionNum][answer]}</h3>} */
+                }
+              </div>
             </div>
             <button
               onClick={handleClick}
@@ -118,7 +120,7 @@ export default function Questions(Props: { name: string }) {
               id="Answer-2"
               key="daph"
             >
-              daph
+              Daph
             </button>
             <button
               onClick={handleClick}
