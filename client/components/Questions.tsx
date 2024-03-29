@@ -3,18 +3,18 @@ import { useQuestions } from '../hooks/useQuestions'
 import { useAddLeaderboard } from '../hooks/useLeaderboard'
 import answerKey from '../hooks/answerGen'
 import { Question } from '../../models/question'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
-interface Props {
-  nickname: string
-}
 
-export default function Questions(props: Props) {
+
+export default function Questions() {
   const [questionNum, setQuestionNum] = useState(0)
   const [score, setScore] = useState(0)
   const { isPending, isError, data, error } = useQuestions()
   const addBoard = useAddLeaderboard()
   const navigate = useNavigate()
+  const { user, logout, loginWithRedirect } = useAuth0()
 
   function handleClick(e) {
     const buttons = document.querySelectorAll(
@@ -59,7 +59,7 @@ export default function Questions(props: Props) {
     if (questionNum < 9) {
       setQuestionNum(1 + questionNum)
     } else {
-      const playerData = { name: props.nickname, score: score }
+      const playerData = user ? { name: user.nickname, score: score } : { name: "Guest", score: score }
       addBoard.mutate(playerData)
       console.log(score)
       navigate('/leaderboard')
