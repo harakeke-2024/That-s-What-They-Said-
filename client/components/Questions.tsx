@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react'
-import * as api from '../apis/questions'
+import { useState } from 'react'
 import { useQuestions } from '../hooks/useQuestions'
+import { useAddLeaderboard } from '../hooks/useLeaderboard'
 import answerKey from '../hooks/answerGen'
 import { Question } from '../../models/question'
-import daph from '../../Public/Audio/Daph.ogg'
-import rich from '../../Public/Audio/rich.ogg'
-import jared from '../../Public/Audio/Jared.ogg'
-import hannah from '../../Public/Audio/hannah.ogg'
+
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Questions() {
   const [questionNum, setQuestionNum] = useState(0)
+  const [score, setScore] = useState(0)
   const { isPending, isError, data, error } = useQuestions()
+  const addBoard = useAddLeaderboard()
+  const navigate = useNavigate()
 
   function handleClick(e) {
     const buttons = document.querySelectorAll(
@@ -36,6 +37,7 @@ export default function Questions() {
 
     if (isCorrect) {
       e.target.style.borderColor = '#78D870'
+      setScore(1 + score)
       console.log('correct')
     } else {
       buttons.forEach((button) => {
@@ -51,9 +53,15 @@ export default function Questions() {
         button.style.borderColor = ''
       })
     }, 1000)
-    setQuestionNum(1 + questionNum)
+    if (questionNum < 9) {
+      setQuestionNum(1 + questionNum)
+    } else {
+      const playerData = { name: 'Blank', score: score }
+      addBoard.mutate(playerData)
+      console.log(score)
+      navigate('/leaderboard')
+    }
   }
-  console.log(answerKey)
 
   const answer = answerKey[questionNum]
 

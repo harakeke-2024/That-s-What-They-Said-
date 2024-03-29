@@ -13,3 +13,8 @@ export interface Leaderboard {
   name: string
   score: number
 }
+
+export interface Board {
+  name: string
+  score: number
+}
