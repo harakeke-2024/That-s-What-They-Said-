@@ -3,8 +3,8 @@ import { Question } from '../../models/question'
 
 const rootUrl = '/api/v1'
 
-export async function getQuestions(id: number): Promise<Question> {
-  return request.get(rootUrl + `/questions/${id}`).then((res) => {
+export async function getQuestions(): Promise<Question> {
+  return request.get(rootUrl + `/questions/`).then((res) => {
     return res.body
   })
 }
