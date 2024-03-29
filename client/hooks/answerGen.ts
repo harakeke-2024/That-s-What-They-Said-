@@ -11,5 +11,7 @@ for (let i = 0; i < 10; i++) {
   const indexAns = getRandomNumber(0, 3)
   answ.push(facilitators[indexAns])
 }
-
-export default answ
+const arr = new Array(10)
+  .fill('')
+  .map((e) => facilitators[getRandomNumber(0, 3)])
+export default arr
