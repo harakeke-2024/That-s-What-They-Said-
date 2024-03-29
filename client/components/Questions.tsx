@@ -6,7 +6,7 @@ import { Question } from '../../models/question'
 
 import { Link, useNavigate } from 'react-router-dom'
 
-export default function Questions() {
+export default function Questions(Props: { name: string }) {
   const [questionNum, setQuestionNum] = useState(0)
   const [score, setScore] = useState(0)
   const { isPending, isError, data, error } = useQuestions()
@@ -56,7 +56,7 @@ export default function Questions() {
     if (questionNum < 9) {
       setQuestionNum(1 + questionNum)
     } else {
-      const playerData = { name: 'Blank', score: score }
+      const playerData = { name: Props.name, score: score }
       addBoard.mutate(playerData)
       console.log(score)
       navigate('/leaderboard')

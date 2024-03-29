@@ -16,5 +16,5 @@ export async function getLeaderboard(): Promise<Leaderboard[]> {
 }
 
 export async function addLeaderboard(data: Board) {
-  request.post(rootUrl + `/leaderboard/`).send(data)
+  return request.post(rootUrl + `/leaderboard/`).send(data)
 }
