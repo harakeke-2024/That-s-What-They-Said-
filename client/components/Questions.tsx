@@ -3,6 +3,10 @@ import * as api from '../apis/questions'
 import { useQuestions } from '../hooks/useQuestions'
 import answerKey from '../hooks/answerGen'
 import { Question } from '../../models/question'
+import daph from '../../Public/Audio/Daph.ogg'
+import rich from '../../Public/Audio/rich.ogg'
+import jared from '../../Public/Audio/Jared.ogg'
+import hannah from '../../Public/Audio/hannah.ogg'
 
 export default function Questions() {
   const [questionNum, setQuestionNum] = useState(0)
@@ -48,8 +52,6 @@ export default function Questions() {
       })
     }, 1000)
     setQuestionNum(1 + questionNum)
-
-    // setQuestionNum(++questionNum)
   }
   console.log(answerKey)
 
@@ -61,13 +63,10 @@ export default function Questions() {
         return <h3>{data[questionNum][answer]}</h3>
       case 'sound':
         return (
-          <></>
-          // <audio
-          //   ref="audio_tag"
-          //   src={`../../Public/Audio/${data[questionNum][answer]}`}
-          //   controls
-          //   autoPlay
-          // />
+          <audio
+            controls
+            src={`../../Public/Audio/${data[questionNum][answer]}`}
+          />
         )
       case 'image':
         return (
