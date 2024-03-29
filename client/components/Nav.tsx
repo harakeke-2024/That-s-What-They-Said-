@@ -23,16 +23,16 @@ function Nav() {
       <div className="container">
         <div id="content_container">
           <div id="content">
-            <h3>Dev Academy</h3>
-            <h1>Trivia Night</h1>
-            <h4>Powered by Deez Nuts</h4>
+            <h3 className="Dev">Dev Academy</h3>
+            <h1 className="title">Trivia Night</h1>
+            <h4 className="By">Powered by Deez Nuts</h4>
             <IfNotAuthenticated>
-              <button className="button_1 white_link" onClick={handleSignIn}>
+              <button className="button_1" onClick={handleSignIn}>
                 Sign in
               </button>
             </IfNotAuthenticated>
             <IfAuthenticated>
-              <button className="button_1 white_link" onClick={handleSignOut}>
+              <button className="button_1" onClick={handleSignOut}>
                 Sign out
               </button>
               {user && <p>Signed in as: {user?.nickname}</p>}
