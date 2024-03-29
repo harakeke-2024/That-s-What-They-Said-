@@ -1,8 +1,8 @@
 import { Question } from '../../models/question.ts'
 import db from './connection.ts'
 
-export async function getQuestionAnswer(id: number): Promise<Question[]> {
-  return db('questions').select().where({ id }).first()
+export async function getQuestionAnswer(): Promise<Question[]> {
+  return db('questions').select()
 }
 
 export async function getLeaderboard() {
