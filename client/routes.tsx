@@ -8,7 +8,7 @@ import Layout from './components/Layout'
 export default createRoutesFromElements(
   <Route path="/" element={<Layout />}>
     <Route index element={<Homepage />} />
-    <Route path="/Questions" element={<Questions />} />
+    <Route path="/questions" element={<Questions />} />
     <Route path="/leaderboard" element={<Leaderboard />} />
   </Route>,
 )
