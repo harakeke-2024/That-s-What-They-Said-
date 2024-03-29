@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { Leaderboard, Question } from '../../models/question'
+import { Board, Leaderboard, Question } from '../../models/question'
 
 const rootUrl = '/api/v1'
 
@@ -13,4 +13,8 @@ export async function getLeaderboard(): Promise<Leaderboard[]> {
   return request.get(rootUrl + `/leaderboard/`).then((res) => {
     return res.body as Leaderboard[]
   })
+}
+
+export async function addLeaderboard(data: Board) {
+  request.post(rootUrl + `/leaderboard/`).send(data)
 }
