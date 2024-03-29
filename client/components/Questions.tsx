@@ -3,10 +3,13 @@ import { useQuestions } from '../hooks/useQuestions'
 import { useAddLeaderboard } from '../hooks/useLeaderboard'
 import answerKey from '../hooks/answerGen'
 import { Question } from '../../models/question'
-
 import { Link, useNavigate } from 'react-router-dom'
 
-export default function Questions(Props: { name: string }) {
+interface Props {
+  nickname: string
+}
+
+export default function Questions(props: Props) {
   const [questionNum, setQuestionNum] = useState(0)
   const [score, setScore] = useState(0)
   const { isPending, isError, data, error } = useQuestions()
@@ -56,7 +59,7 @@ export default function Questions(Props: { name: string }) {
     if (questionNum < 9) {
       setQuestionNum(1 + questionNum)
     } else {
-      const playerData = { name: Props.name, score: score }
+      const playerData = { name: props.nickname, score: score }
       addBoard.mutate(playerData)
       console.log(score)
       navigate('/leaderboard')

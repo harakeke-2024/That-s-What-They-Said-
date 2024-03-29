@@ -13,7 +13,11 @@ export default function Homepage() {
     <>
       <ul>
         <IfAuthenticated>
-          <Questions user={user?.name} />
+          {user ? (
+            <Questions user={user?.nickname} />
+          ) : (
+            <Questions user="blank" />
+          )}
         </IfAuthenticated>
         <IfNotAuthenticated>
           <Nav />
