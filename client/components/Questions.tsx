@@ -13,21 +13,41 @@ export default function Questions() {
       '.Answer-button',
     ) as NodeListOf<HTMLButtonElement>
 
-    if (e.target.innerHTML.toLowerCase() == answer) {
+    const correctAnswer = answer.toLowerCase()
+    const clickedAnswer = e.target.innerHTML.toLowerCase()
+
+    buttons.forEach((button) => {
+      if (button.innerHTML.toLowerCase() === correctAnswer) {
+        button.style.borderColor = '#78D870'
+      }
+    })
+
+    buttons.forEach((button) => {
+      if (button.innerHTML.toLowerCase() !== correctAnswer) {
+        button.style.borderColor = '#FF0000'
+      }
+    })
+
+    const isCorrect = clickedAnswer === correctAnswer
+
+    if (isCorrect) {
+      e.target.style.borderColor = '#78D870'
       console.log('correct')
     } else {
-      console.log('incorrect')
-    }
-    setQuestionNum(1 + questionNum)
-    setTimeout(() => {
       buttons.forEach((button) => {
-        if (button.textContent === answer) {
-          button.style.borderColor = 'green'
-        } else {
-          button.style.borderColor = 'red'
+        if (button.innerHTML.toLowerCase() === correctAnswer) {
+          button.style.borderColor = '#78D870'
         }
       })
+      console.log('incorrect')
+    }
+
+    setTimeout(() => {
+      buttons.forEach((button) => {
+        button.style.borderColor = ''
+      })
     }, 1000)
+    setQuestionNum(1 + questionNum)
 
     // setQuestionNum(++questionNum)
   }
@@ -40,7 +60,15 @@ export default function Questions() {
       case 'text':
         return <h3>{data[questionNum][answer]}</h3>
       case 'sound':
-        return <h3>sound:{data[questionNum][answer]}</h3>
+        return (
+          <></>
+          // <audio
+          //   ref="audio_tag"
+          //   src={`../../Public/Audio/${data[questionNum][answer]}`}
+          //   controls
+          //   autoPlay
+          // />
+        )
       case 'image':
         return (
           <img
