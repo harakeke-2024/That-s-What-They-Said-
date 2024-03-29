@@ -12,23 +12,42 @@ export default function Questions() {
       '.Answer-button',
     ) as NodeListOf<HTMLButtonElement>
 
-    if (e.target.innerHTML.toLowerCase() == answer) {
+    const correctAnswer = answer.toLowerCase()
+    const clickedAnswer = e.target.innerHTML.toLowerCase()
+
+    buttons.forEach((button) => {
+      if (button.innerHTML.toLowerCase() === correctAnswer) {
+        button.style.borderColor = '#78D870'
+      }
+    })
+
+    buttons.forEach((button) => {
+      if (button.innerHTML.toLowerCase() !== correctAnswer) {
+        button.style.borderColor = '#FF0000'
+      }
+    })
+
+    const isCorrect = clickedAnswer === correctAnswer
+
+    if (isCorrect) {
+      e.target.style.borderColor = '#78D870'
       console.log('correct')
     } else {
+      buttons.forEach((button) => {
+        if (button.innerHTML.toLowerCase() === correctAnswer) {
+          button.style.borderColor = '#78D870'
+        }
+      })
       console.log('incorrect')
     }
 
     setTimeout(() => {
       buttons.forEach((button) => {
-        if (button.textContent === answer) {
-          button.style.borderColor = 'green'
-        } else {
-          button.style.borderColor = 'red'
-        }
+        button.style.borderColor = ''
       })
     }, 1000)
 
-    // setQuestionNum(++questionNum)
+    setQuestionNum(questionNum + 1)
   }
   console.log(answerKey)
 
